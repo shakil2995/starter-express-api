@@ -57,7 +57,7 @@ app.get("/coords/nsu" || "/coords/NSU", function (req, res) {
 	res.status(200).send(latLngNsu);
 });
 app.get("/notice", function (req, res) {
-	res.status(200).send(latLngNsu);
+	res.status(200).send(noticeArr);
 });
 
 app.post("/notice", function (req, res) {
