@@ -38,6 +38,13 @@ var latLngNsu = {
 
 	],
 };
+var noticeArr = {
+	"results": [
+		{
+			"notice": "Notice 1",
+		}
+	],
+};
 
 app.get("/", function (req, res) {
 	res.status(200);
@@ -49,7 +56,14 @@ app.get("/coords/iub" || "/coords/IUB", function (req, res) {
 app.get("/coords/nsu" || "/coords/NSU", function (req, res) {
 	res.status(200).send(latLngNsu);
 });
+app.get("/notice", function (req, res) {
+	res.status(200).send(latLngNsu);
+});
 
+app.post("/notice", function (req, res) {
+	noticeArr.results[0].location.coordinates.latitude = req.query.notice;
+	res.send(latLngIub);
+});
 app.post("/coords/iub", function (req, res) {
 	latLngIub.results[0].location.coordinates.latitude = req.query.lat;
 	latLngIub.results[0].location.coordinates.longitude = req.query.lng;
