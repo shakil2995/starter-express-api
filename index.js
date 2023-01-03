@@ -53,12 +53,12 @@ app.get("/coords/nsu" || "/coords/NSU", function (req, res) {
 app.post("/coords/iub", function (req, res) {
 	latLng.latLngIub[0].location.coordinates.latitude = req.query.lat;
 	latLng.latLngIub[0].location.coordinates.longitude = req.query.lng;
-	res.send(latLng);
+	res.send(latLngIub);
 });
 app.post("/coords/nsu", function (req, res) {
 	latLng.latLngNsu[0].location.coordinates.latitude = req.query.lat;
 	latLng.latLngNsu[0].location.coordinates.longitude = req.query.lng;
-	res.send(latLng);
+	res.send(latLngNsu);
 });
 app.listen(process.env.PORT || 3000, function (req, res) {
 	console.log("server Working");
