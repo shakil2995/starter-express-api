@@ -18,26 +18,7 @@ var latLngIub = {
 				},
 			},
 		},
-		{
-			"busNo": 1,
-			"institute": "IUB",
-			"location": {
-				"coordinates": {
-					"latitude": "23.854191",
-					"longitude": "90.405035"
-				},
-			},
-		},
-		{
-			"busNo": 2,
-			"institute": "IUB",
-			"location": {
-				"coordinates": {
-					"latitude": "23.844191",
-					"longitude": "90.371035"
-				},
-			},
-		},
+
 
 	],
 };
@@ -53,16 +34,7 @@ var latLngNsu = {
 				},
 			},
 		},
-		{
-			"busNo": 1,
-			"institute": "NSU",
-			"location": {
-				"coordinates": {
-					"latitude": "23.854191",
-					"longitude": "90.405035"
-				},
-			},
-		},
+
 
 	],
 };
@@ -78,9 +50,14 @@ app.get("/coords/nsu" || "/coords/NSU", function (req, res) {
 	res.status(200).send(latLngNsu);
 });
 
-app.post("/coords/iub/busno", function (req, res) {
-	latLng.results[req.query.busno].location.coordinates.latitude = req.query.lat;
-	latLng.results[req.query.busno].location.coordinates.longitude = req.query.lng;
+app.post("/coords/iub", function (req, res) {
+	latLng.latLngIub[0].location.coordinates.latitude = req.query.lat;
+	latLng.latLngIub[0].location.coordinates.longitude = req.query.lng;
+	res.send(latLng);
+});
+app.post("/coords/nsu", function (req, res) {
+	latLng.latLngNsu[0].location.coordinates.latitude = req.query.lat;
+	latLng.latLngNsu[0].location.coordinates.longitude = req.query.lng;
 	res.send(latLng);
 });
 app.listen(process.env.PORT || 3000, function (req, res) {
