@@ -61,7 +61,7 @@ app.get("/notice", function (req, res) {
 });
 
 app.post("/notice", function (req, res) {
-	noticeArr.results[0].location.coordinates.latitude = req.query.notice;
+	noticeArr.results[0].notice = req.query.notice;
 	res.send(noticeArr);
 });
 app.post("/coords/iub", function (req, res) {
