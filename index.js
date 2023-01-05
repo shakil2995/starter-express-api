@@ -13,8 +13,8 @@ var latLngIub = {
 			"institute": "IUB",
 			"location": {
 				"coordinates": {
-					"latitude": "23.864191",
-					"longitude": "90.381035"
+					"latitude": "0.0",
+					"longitude": "0.0"
 				},
 			},
 		},
