@@ -41,7 +41,7 @@ var latLngNsu = {
 var noticeArr = {
 	"results": [
 		{
-			"notice": "Notice 1",
+			"notice": "Ushuttle bus service is available for all students of IUB",
 		}
 	],
 };
