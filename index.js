@@ -18,8 +18,6 @@ var latLngIub = {
 				},
 			},
 		},
-
-
 	],
 };
 var latLngNsu = {
