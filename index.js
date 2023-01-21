@@ -36,10 +36,17 @@ var latLngNsu = {
 
 	],
 };
-var noticeArr = {
+var noticeArrIUB = {
 	"results": [
 		{
 			"notice": "Ushuttle bus service is available for all students of IUB",
+		}
+	],
+};
+var noticeArrNSU = {
+	"results": [
+		{
+			"notice": "Ushuttle bus service is available for all students of NSU",
 		}
 	],
 };
@@ -48,23 +55,34 @@ app.get("/", function (req, res) {
 	res.status(200);
 	res.send("<h1>Hello world</h1>");
 });
+
+//  Coordinates route
 app.get("/coords/iub" || "/coords/IUB", function (req, res) {
 	res.status(200).send(latLngIub);
 });
 app.get("/coords/nsu" || "/coords/NSU", function (req, res) {
 	res.status(200).send(latLngNsu);
 });
-app.get("/notice", function (req, res) {
-	res.status(200).send(noticeArr);
+
+//  notice route
+app.get("/notice/iub" || "/notice/IUB", function (req, res) {
+	res.status(200).send(noticeArrIUB);
+});
+app.get("/notice/nsu" || "/notice/NSU", function (req, res) {
+	res.status(200).send(noticeArrNSU);
 });
 
-app.post("/notice/iub", function (req, res) {
-	noticeArr.results[0].notice = req.query.notice;
-	res.send(noticeArr);
+// app.post(, function (req, res) {
+// 	noticeArr.results[0].notice = req.query.notice;
+// 	res.send(noticeArr);
+// });
+app.post("/notice/IUB" || "/notice/iub", function (req, res) {
+	noticeArrIUB.results[0].notice = req.query.notice;
+	res.send(noticeArrIUB);
 });
-app.post("/notice/IUB", function (req, res) {
-	noticeArr.results[0].notice = req.query.notice;
-	res.send(noticeArr);
+app.post("/notice/NSU" || "/notice/nsu", function (req, res) {
+	noticeArrNSU.results[0].notice = req.query.notice;
+	res.send(noticeArrNSU);
 });
 app.post("/coords/iub", function (req, res) {
 	latLngIub.results[0].location.coordinates.latitude = req.query.lat;
