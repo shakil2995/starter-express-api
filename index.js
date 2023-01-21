@@ -58,7 +58,11 @@ app.get("/notice", function (req, res) {
 	res.status(200).send(noticeArr);
 });
 
-app.post("/notice", function (req, res) {
+app.post("/notice/iub", function (req, res) {
+	noticeArr.results[0].notice = req.query.notice;
+	res.send(noticeArr);
+});
+app.post("/notice/IUB", function (req, res) {
 	noticeArr.results[0].notice = req.query.notice;
 	res.send(noticeArr);
 });
