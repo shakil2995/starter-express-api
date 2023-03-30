@@ -75,8 +75,7 @@ app.get("/notice/nsu" || "/notice/NSU", function (req, res) {
 	res.status(200).send(noticeArrNSU);
 });
 app.get("/isauthorised", function (req, res) {
-	res.status(200).json({ isAuthorised: !true });
-	// sending true means not authorised
+	res.status(200).json({ isAuthorised: true });
 });
 
 // app.post(, function (req, res) {
