@@ -74,11 +74,8 @@ app.get("/notice/iub" || "/notice/IUB", function (req, res) {
 app.get("/notice/nsu" || "/notice/NSU", function (req, res) {
 	res.status(200).send(noticeArrNSU);
 });
-app.get("/detection/f", function (req, res) {
-	res.status(200).json({ isFraudDetected: false });
-});
-app.get("/detection", function (req, res) {
-	res.status(200).json({ isFraudDetected: true });
+app.get("/isauthorised", function (req, res) {
+	res.status(200).json({ isFraudDetected: !true });
 });
 
 // app.post(, function (req, res) {
