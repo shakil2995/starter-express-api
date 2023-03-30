@@ -71,6 +71,9 @@ app.get("/notice/iub" || "/notice/IUB", function (req, res) {
 app.get("/notice/nsu" || "/notice/NSU", function (req, res) {
 	res.status(200).send(noticeArrNSU);
 });
+app.get("/detection", function (req, res) {
+	res.status(200).json({ isFraudDetected: false });
+});
 
 // app.post(, function (req, res) {
 // 	noticeArr.results[0].notice = req.query.notice;
