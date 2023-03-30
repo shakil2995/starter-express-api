@@ -4,7 +4,10 @@ const app = express();
 // GeolocationCoordinates = require('./models/geolocationCoordinates');
 // const bodyParser = require('body-parser');
 // const mongoose = require('mongoose');
-// const cors = require('cors');
+const cors = require('cors');
+app.use(cors({
+	origin: '*'
+}));
 // app.use(cors());
 var latLngIub = {
 	"results": [
